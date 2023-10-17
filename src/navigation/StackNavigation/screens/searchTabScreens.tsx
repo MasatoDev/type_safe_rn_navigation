@@ -4,7 +4,7 @@ import {Picture} from 'src/screen/SearchTab/Picture';
 
 export type SearchTabStackParamList = {
   Search: undefined;
-  Picture: undefined;
+  Picture: {pictureId: number};
 };
 
 export const searchTabScreens: StackNavigationScreens<

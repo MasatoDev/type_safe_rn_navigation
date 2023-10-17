@@ -5,7 +5,7 @@ import {Recommends} from 'src/screen/HomeTab/Recommends';
 
 export type HomeTabStackParamList = {
   Home: undefined;
-  Picture: undefined;
+  Picture: {pictureId: number};
   Recommends: undefined;
 };
 
