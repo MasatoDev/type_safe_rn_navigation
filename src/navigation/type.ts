@@ -12,7 +12,7 @@ import {
 
 export type TabScreenProps<
   T extends TabType,
-  U extends keyof ParamListType<T> & string,
+  U extends keyof ParamListType<T> & string, // StackParamListのkeyがstringであることを明示する
 > = CompositeScreenProps<
   BottomTabScreenProps<ParamListType<T>, U>,
   BottomTabScreenProps<TabStackParamList>
