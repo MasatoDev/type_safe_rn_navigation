@@ -1,18 +1,26 @@
-import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
-import {NativeStackNavigationOptions} from '@react-navigation/native-stack/lib/typescript/src/types';
+/**
+ * @see https://reactnavigation.org/docs/typescript#organizing-types
+ */
 
-/* Screen Map Type */
-export type StackNavigationScreens<T extends string> = {
-  [key in T]: {
-    name: string;
-    component: React.ComponentType<any>;
-    options?: NativeStackNavigationOptions;
-  };
-};
-export type TabNavigationScreens<T extends string> = {
-  [key in T]: {
-    name: string;
-    component: React.ComponentType<any>;
-    options?: BottomTabNavigationOptions;
-  };
-};
+import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
+import {CompositeScreenProps} from '@react-navigation/native';
+import {
+  ParamListType,
+  TabStackParamList,
+  TabType,
+} from './TabNavigation/tabScreens';
+
+export type TabScreenProps<
+  T extends TabType,
+  U extends keyof ParamListType<T> & string,
+> = CompositeScreenProps<
+  BottomTabScreenProps<ParamListType<T>, U>,
+  BottomTabScreenProps<TabStackParamList>
+>;
+
+/* default type */
+declare global {
+  namespace ReactNavigation {
+    interface RootParamList extends TabStackParamList {}
+  }
+}

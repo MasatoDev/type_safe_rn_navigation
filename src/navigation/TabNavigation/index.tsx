@@ -1,9 +1,9 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import React, {FC} from 'react';
-import {tabScreens} from './tabScreens';
+import {TabStackParamList, tabScreens} from './tabScreens';
 
-const Tab = createBottomTabNavigator();
-const initialRouteName = 'HomeNavigation';
+const Tab = createBottomTabNavigator<TabStackParamList>();
+const initialRouteName = 'HomeTab';
 
 export const TabNavigation: FC = () => {
   return (

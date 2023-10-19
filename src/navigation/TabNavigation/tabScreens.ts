@@ -8,7 +8,16 @@ import {
 import {HomeTabStackParamList} from '../StackNavigation/screens/homeTabScreens';
 import {MyPageTabStackParamList} from '../StackNavigation/screens/myPageTabScreens';
 import {SearchTabStackParamList} from '../StackNavigation/screens/searchTabScreens';
-import {TabNavigationScreens} from '../type';
+import {BottomTabNavigationOptions} from '@react-navigation/bottom-tabs';
+
+/* Screen Map Type */
+export type TabNavigationScreens<T extends string> = {
+  [key in T]: {
+    name: T;
+    component: React.ComponentType<any>;
+    options?: BottomTabNavigationOptions;
+  };
+};
 
 /** ParamList */
 export type TabStackParamList = {

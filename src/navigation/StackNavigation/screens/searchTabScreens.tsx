@@ -1,4 +1,4 @@
-import {StackNavigationScreens} from 'src/navigation/type';
+import {StackNavigationScreens} from '../type';
 import {Search} from 'src/screen/SearchTab/Search';
 import {Picture} from 'src/screen/SearchTab/Picture';
 

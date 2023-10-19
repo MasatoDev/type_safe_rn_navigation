@@ -1,4 +1,4 @@
-import {StackNavigationScreens} from 'src/navigation/type';
+import {StackNavigationScreens} from '../type';
 import {MyPage} from 'src/screen/MyPageTab/MyPage';
 
 export type MyPageTabStackParamList = {

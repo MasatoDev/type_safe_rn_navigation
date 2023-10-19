@@ -1,10 +1,10 @@
-import {StackNavigationScreens} from 'src/navigation/type';
+import {StackNavigationScreens} from '../type';
 import {Home} from 'src/screen/HomeTab/Home';
 import {Picture} from 'src/screen/HomeTab/Picture';
 import {Recommends} from 'src/screen/HomeTab/Recommends';
 
 export type HomeTabStackParamList = {
-  Home: undefined;
+  Home: {homeId: number};
   Picture: {pictureId: number};
   Recommends: undefined;
 };

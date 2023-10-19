@@ -2,22 +2,29 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import React, {FC} from 'react';
 
 import {commonScreenOptions} from 'src/navigation/constant';
-import {homeTabScreens} from './screens/homeTabScreens';
-import {searchTabScreens} from './screens/searchTabScreens';
-import {myPageTabScreens} from './screens/myPageTabScreens';
+import {HomeTabStackParamList, homeTabScreens} from './screens/homeTabScreens';
+import {
+  SearchTabStackParamList,
+  searchTabScreens,
+} from './screens/searchTabScreens';
+import {
+  MyPageTabStackParamList,
+  myPageTabScreens,
+} from './screens/myPageTabScreens';
 
 export const initialHomeTabScreen = 'Home';
 export const initialMyPageTabScreen = 'MyPage';
 export const initialSearchTabScreen = 'Search';
 
 export const HomeStackNavigation: FC = () => {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<HomeTabStackParamList>();
   return (
     <Stack.Navigator
       initialRouteName={initialHomeTabScreen}
       screenOptions={commonScreenOptions}>
       {Object.keys(homeTabScreens).map((key: string) => {
         const screen = homeTabScreens[key as keyof typeof homeTabScreens];
+
         return (
           <Stack.Screen
             key={screen.name}
@@ -32,7 +39,7 @@ export const HomeStackNavigation: FC = () => {
 };
 
 export const MyPageStackNavigation: FC = () => {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<MyPageTabStackParamList>();
   return (
     <Stack.Navigator
       initialRouteName={initialMyPageTabScreen}
@@ -53,7 +60,7 @@ export const MyPageStackNavigation: FC = () => {
 };
 
 export const SearchStackNavigation: FC = () => {
-  const Stack = createNativeStackNavigator();
+  const Stack = createNativeStackNavigator<SearchTabStackParamList>();
   return (
     <Stack.Navigator
       initialRouteName={initialSearchTabScreen}
