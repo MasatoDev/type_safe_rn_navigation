@@ -8,7 +8,7 @@
     "lint": "eslint .",
     "start": "react-native start",
     "test": "jest",
-    "zx": "./scripts/zx/_index.mjs",
+    "add-screen": "./scripts/zx/add-screen.mjs",
     "type-check": "tsc --noEmit"
   },
   "dependencies": {

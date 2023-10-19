@@ -1,5 +1,5 @@
 import React, {FC} from 'react';
-import {Button, Text, View} from 'react-native';
+import {Button, StyleSheet, Text, View} from 'react-native';
 import {Layout} from 'src/components/Layout.tsx';
 import {useStackNavigation} from 'src/navigation/StackNavigation/useStackNavigation';
 import {useStackRoute} from 'src/navigation/StackNavigation/useStackRoute';
@@ -12,14 +12,8 @@ export const Picture: FC = () => {
 
   return (
     <Layout>
-      <View
-        style={{
-          height: '100%',
-          alignItems: 'center',
-          justifyContent: 'center',
-          backgroundColor: '#7BFACB',
-        }}>
-        <Text style={{fontSize: 30, fontWeight: 'bold'}}>Picture</Text>
+      <View style={styles.container}>
+        <Text style={styles.title}>Picture</Text>
 
         <Button
           title="Recommends"
@@ -29,3 +23,16 @@ export const Picture: FC = () => {
     </Layout>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {
+    height: '100%',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '#7BFACB',
+  },
+  title: {
+    fontSize: 30,
+    fontWeight: 'bold',
+  },
+});

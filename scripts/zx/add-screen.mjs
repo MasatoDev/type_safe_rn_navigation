@@ -21,12 +21,10 @@ if (!screenName || !tabName) {
   process.exit(1);
 }
 
-console.log('screenName', screenName);
-console.log('tabName', tabName);
-
 // コンポーネントのテンプレートを定義する
 const componentTemplate = `
 import React, {FC} from 'react';
+import {StyleSheet} from 'react-native';
 import {Layout} from 'src/components/Layout.tsx';
 import {useStackNavigation} from 'src/navigation/StackNavigation/useStackNavigation';
 import {useStackRoute} from 'src/navigation/StackNavigation/useStackRoute';
@@ -41,6 +39,10 @@ export const ${screenName}: FC = () => {
     </Layout>
   );
 };
+
+const styles = StyleSheet.create({
+  container: {},
+});
 
 `;
 
