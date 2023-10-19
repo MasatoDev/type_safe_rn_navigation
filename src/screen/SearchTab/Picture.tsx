@@ -6,11 +6,15 @@ import {useStackNavigation} from 'src/navigation/StackNavigation/useStackNavigat
 export const Picture: FC = () => {
   const navigation = useStackNavigation<'SearchTab'>();
 
+  const handleSearchButtonPress = () => {
+    navigation.navigate('Search');
+  };
+
   return (
     <Layout>
       <View style={styles.container}>
         <Text style={styles.title}>Picture</Text>
-        <Button title="Search" onPress={() => navigation.navigate('Search')} />
+        <Button title="Search" onPress={handleSearchButtonPress} />
       </View>
     </Layout>
   );

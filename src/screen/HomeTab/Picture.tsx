@@ -10,15 +10,16 @@ export const Picture: FC = () => {
 
   console.log(route.params.pictureId);
 
+  const handleRecommendsButtonPress = () => {
+    navigation.navigate('Recommends');
+  };
+
   return (
     <Layout>
       <View style={styles.container}>
         <Text style={styles.title}>Picture</Text>
 
-        <Button
-          title="Recommends"
-          onPress={() => navigation.navigate('Recommends')}
-        />
+        <Button title="Recommends" onPress={handleRecommendsButtonPress} />
       </View>
     </Layout>
   );

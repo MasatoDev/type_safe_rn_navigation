@@ -6,18 +6,20 @@ import {useTabNavigation} from 'src/navigation/TabNavigation/useTabNavigation';
 export const MyPage: FC = () => {
   const tabNavigation = useTabNavigation();
 
+  const handlePictureOfHomeTabButtonPress = () => {
+    tabNavigation.navigate('HomeTab', {
+      screen: 'Picture',
+      params: {pictureId: 1},
+    });
+  };
+
   return (
     <Layout>
       <View style={styles.container}>
         <Text style={styles.title}>MyPage</Text>
         <Button
           title="HomeTabのPicture"
-          onPress={() =>
-            tabNavigation.navigate('HomeTab', {
-              screen: 'Picture',
-              params: {pictureId: 1},
-            })
-          }
+          onPress={handlePictureOfHomeTabButtonPress}
         />
       </View>
     </Layout>

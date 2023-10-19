@@ -6,11 +6,15 @@ import {useStackNavigation} from 'src/navigation/StackNavigation/useStackNavigat
 export const Recommends: FC = () => {
   const navigation = useStackNavigation<'HomeTab'>();
 
+  const handleHomeButtonPress = () => {
+    navigation.navigate('Home');
+  };
+
   return (
     <Layout>
       <View style={styles.container}>
         <Text style={styles.title}>Recommends</Text>
-        <Button title="Home" onPress={() => navigation.navigate('Home')} />
+        <Button title="Home" onPress={handleHomeButtonPress} />
       </View>
     </Layout>
   );
