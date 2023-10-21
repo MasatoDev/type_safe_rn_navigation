@@ -1,11 +1,11 @@
 import React, {FC} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {Layout} from 'src/components/Layout.tsx';
-import {useStackNavigation} from 'src/navigation/StackNavigation/useStackNavigation';
+import {TabScreenProps} from 'src/navigation/type';
 
-export const Recommends: FC = () => {
-  const navigation = useStackNavigation<'HomeTab'>();
-
+export const Recommends: FC<TabScreenProps<'HomeTab', 'Recommends'>> = ({
+  navigation,
+}) => {
   const handleHomeButtonPress = () => {
     navigation.navigate('Home');
   };

@@ -1,20 +1,19 @@
-import {useNavigation} from '@react-navigation/native';
 import React, {FC} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {Layout} from 'src/components/Layout.tsx';
+import {TabScreenProps} from 'src/navigation/type';
 
-export const Picture: FC = () => {
-  const navigation = useNavigation();
-
+export const Picture: FC<TabScreenProps<'HomeTab', 'Picture'>> = ({
+  navigation,
+}) => {
   const handleRecommendsButtonPress = () => {
-    navigation.navigate('MyPageTab', {screen: 'MyPage'});
+    navigation.navigate('Recommends');
   };
 
   return (
     <Layout>
       <View style={styles.container}>
         <Text style={styles.title}>Picture</Text>
-
         <Button title="Recommends" onPress={handleRecommendsButtonPress} />
       </View>
     </Layout>
