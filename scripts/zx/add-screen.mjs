@@ -25,13 +25,12 @@ if (!screenName || !tabName) {
 const componentTemplate = `
 import React, {FC} from 'react';
 import {StyleSheet} from 'react-native';
-import {Layout} from 'src/components/Layout.tsx';
-import {useStackNavigation} from 'src/navigation/StackNavigation/useStackNavigation';
-import {useStackRoute} from 'src/navigation/StackNavigation/useStackRoute';
+import {TabScreenProps} from 'src/navigation/type';
 
-export const ${screenName}: FC = () => {
-  const navigation = useStackNavigation<'${tabName}'>();
-  const route = useStackRoute<'${tabName}', '${screenName}'>();
+export const ${screenName}: FC<TabScreenProps<'${tabName}', '${screenName}'>> = ({
+  navigation,
+  route
+}) => {
 
   return (
     <Layout>
