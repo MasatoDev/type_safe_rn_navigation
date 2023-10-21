@@ -1,4 +1,4 @@
-import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import {createStackNavigator} from '@react-navigation/stack';
 import React, {FC} from 'react';
 
 import {commonScreenOptions} from 'src/navigation/constant';
@@ -17,7 +17,7 @@ export const initialMyPageTabScreen = 'MyPage';
 export const initialSearchTabScreen = 'Search';
 
 export const HomeStackNavigation: FC = () => {
-  const Stack = createNativeStackNavigator<HomeTabStackParamList>();
+  const Stack = createStackNavigator<HomeTabStackParamList>();
   return (
     <Stack.Navigator
       initialRouteName={initialHomeTabScreen}
@@ -39,7 +39,7 @@ export const HomeStackNavigation: FC = () => {
 };
 
 export const MyPageStackNavigation: FC = () => {
-  const Stack = createNativeStackNavigator<MyPageTabStackParamList>();
+  const Stack = createStackNavigator<MyPageTabStackParamList>();
   return (
     <Stack.Navigator
       initialRouteName={initialMyPageTabScreen}
@@ -60,7 +60,7 @@ export const MyPageStackNavigation: FC = () => {
 };
 
 export const SearchStackNavigation: FC = () => {
-  const Stack = createNativeStackNavigator<SearchTabStackParamList>();
+  const Stack = createStackNavigator<SearchTabStackParamList>();
   return (
     <Stack.Navigator
       initialRouteName={initialSearchTabScreen}

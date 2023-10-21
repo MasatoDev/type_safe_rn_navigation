@@ -1,11 +1,13 @@
-import React, {FC} from 'react';
+import {useNavigation} from '@react-navigation/native';
+import React from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {Layout} from 'src/components/Layout.tsx';
-import {TabScreenProps} from 'src/navigation/type';
 
-export const Home: FC<TabScreenProps<'HomeTab', 'Home'>> = ({navigation}) => {
+export const Home = () => {
+  const navigation = useNavigation();
+
   const handlePictureButtonPress = () => {
-    navigation.navigate('Picture', {pictureId: 1});
+    navigation.navigate('Picture', {hogeId: 1});
   };
 
   return (

@@ -1,11 +1,11 @@
+import {useNavigation} from '@react-navigation/native';
 import React, {FC} from 'react';
 import {Button, StyleSheet, Text, View} from 'react-native';
 import {Layout} from 'src/components/Layout.tsx';
-import {TabScreenProps} from 'src/navigation/type';
 
-export const Search: FC<TabScreenProps<'SearchTab', 'Search'>> = ({
-  navigation,
-}) => {
+export const Search: FC = () => {
+  const navigation = useNavigation();
+
   const handlePictureButtonPress = () => {
     navigation.navigate('Picture', {pictureId: 1});
   };

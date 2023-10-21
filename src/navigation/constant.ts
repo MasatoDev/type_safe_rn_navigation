@@ -1,6 +1,6 @@
-import {NativeStackNavigationOptions} from '@react-navigation/native-stack';
+import {StackNavigationOptions} from '@react-navigation/stack';
 
-export const commonScreenOptions: NativeStackNavigationOptions = {
+export const commonScreenOptions: StackNavigationOptions = {
   headerBackTitleVisible: false,
   headerTintColor: '#0D0D0D',
   headerTitleAlign: 'center',

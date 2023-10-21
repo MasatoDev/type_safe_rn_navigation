@@ -2,8 +2,8 @@
  * @see https://reactnavigation.org/docs/typescript#organizing-types
  */
 
-import {BottomTabScreenProps} from '@react-navigation/bottom-tabs';
-import {CompositeScreenProps} from '@react-navigation/native';
+import {BottomTabNavigationProp} from '@react-navigation/bottom-tabs';
+import {CompositeNavigationProp} from '@react-navigation/native';
 import {
   ParamListType,
   TabStackParamList,
@@ -17,9 +17,9 @@ import {
 export type TabScreenProps<
   T extends TabType,
   U extends keyof ParamListType<T> & string, // StackParamListのkeyがstringであることを明示する
-> = CompositeScreenProps<
-  BottomTabScreenProps<ParamListType<T>, U>,
-  BottomTabScreenProps<TabStackParamList>
+> = CompositeNavigationProp<
+  BottomTabNavigationProp<ParamListType<T>, U>,
+  BottomTabNavigationProp<TabStackParamList>
 >;
 
 /**
